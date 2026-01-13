@@ -1,0 +1,203 @@
+{
+  "info": {
+    "name": "Loan Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Crear Solicitud de Préstamo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombreSolicitante\": \"Juan García López\",\n  \"importeSolicitado\": 5000.00,\n  \"divisa\": \"EUR\",\n  \"documentoIdentificativo\": \"12345678A\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans"]
+        }
+      }
+    },
+    {
+      "name": "2. Listar Todas las Solicitudes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/loans",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans"]
+        }
+      }
+    },
+    {
+      "name": "3. Obtener Solicitud por ID (ID=1)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/loans/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "1"]
+        }
+      }
+    },
+    {
+      "name": "4. Cambiar Estado a APROBADA (ID=1)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"APROBADA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans/1/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "1", "status"]
+        }
+      }
+    },
+    {
+      "name": "5. Cambiar Estado a RECHAZADA (ID=2)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"RECHAZADA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans/2/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "2", "status"]
+        }
+      }
+    },
+    {
+      "name": "6. Cambiar a CANCELADA desde APROBADA (ID=1)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"CANCELADA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans/1/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "1", "status"]
+        }
+      }
+    },
+    {
+      "name": "7. TRANSICIÓN INVÁLIDA (PENDIENTE -> CANCELADA) ❌",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"CANCELADA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans/3/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "3", "status"]
+        }
+      }
+    },
+    {
+      "name": "8. Obtener Solicitud Inexistente (404)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/loans/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans", "999"]
+        }
+      }
+    },
+    {
+      "name": "9. Crear Otra Solicitud",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombreSolicitante\": \"María Rodríguez Pérez\",\n  \"importeSolicitado\": 15000.00,\n  \"divisa\": \"EUR\",\n  \"documentoIdentificativo\": \"87654321B\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/loans",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["loans"]
+        }
+      }
+    }
+  ]
+}
