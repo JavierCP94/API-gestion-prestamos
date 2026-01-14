@@ -251,4 +251,4 @@ GET /loans/reports/estadisticas
 
 ---
 
-## Proyecto realizado como prueba técnica.
+### Proyecto realizado como prueba técnica.
