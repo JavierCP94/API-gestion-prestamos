@@ -49,6 +49,8 @@ O en PowerShell:
 Invoke-WebRequest -Uri "http://localhost:8080/loans" -Method GET
 ```
 
+En mi caso, probé los endpoints HTTP con Postman para validar las peticiones y respuestas.
+
 ---
 
 ## 2. Arquitectura y Decisiones Técnicas
@@ -147,7 +149,7 @@ src/main/java/com/loanmanagement/
 
 ---
 
-## 3. Mejoras y Extensiones Futuras
+## 3. Posibles Mejoras y Extensiones Futuras
 
 ### 3.1 Mejoras Funcionales
 
