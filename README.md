@@ -241,7 +241,3 @@ GET /loans/reports/estadisticas
 - **Swagger/OpenAPI**
 - Documentación en `/swagger-ui.html`
 - Generar cliente SDK automáticamente
-
----
-
-### Proyecto realizado como prueba técnica.
