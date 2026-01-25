@@ -4,13 +4,6 @@
 
 ## 1. Instrucciones para Ejecutar el Proyecto
 
-### Requisitos
-
-- **Java**: 11+
-- **Maven**: 3.6+
-
-### Pasos
-
 #### 1.1 Compilar el proyecto
 
 ```bash
